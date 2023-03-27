@@ -23,14 +23,6 @@ const Menu = () => {
                 router.push("/launches");
                 setActive('/launches')
                 break;
-            case '/vehicles':
-                router.push("/vehicles");
-                setActive('/vehicles')
-                break;
-            case '/images':
-                router.push("/images");
-                setActive('/images')
-                break;
         
             default:
                 break;
@@ -68,36 +60,6 @@ const Menu = () => {
         onClick={() => changePage('/launches')}
       >
         Launches
-      </li>
-      <li
-      className=" cursor-pointer select-none"
-        style={
-          active === "/vehicles"
-            ? {
-                backgroundColor: "rgba(0, 171, 255, .25)",
-                borderRight: "2px solid rgba(0, 171, 255)",
-                marginRight: "-2px",
-              }
-            : {}
-        }
-        onClick={() => changePage('/vehicles')}
-      >
-        Vehicles
-      </li>
-      <li
-      className=" cursor-pointer select-none"
-        style={
-          active === "/images"
-            ? {
-                backgroundColor: "rgba(0, 171, 255, .25)",
-                borderRight: "2px solid rgba(0, 171, 255)",
-                marginRight: "-2px",
-              }
-            : {}
-        }
-        onClick={() => changePage('/images')}
-      >
-        Images
       </li>
     </>
   );

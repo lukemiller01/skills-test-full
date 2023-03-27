@@ -3,13 +3,13 @@ import Link from "next/link";
 const Menu = () => (
   <>
     <h3>
-      <Link href={"/"}>Launches</Link>
+      Link 1
     </h3>
     <h3>
-      <Link href={"/"}>Locations</Link>
+      Link 2
     </h3>
     <h3>
-      <Link href={"/"}>Customize</Link>
+      Link 3
     </h3>
   </>
 );

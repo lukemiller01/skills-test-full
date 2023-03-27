@@ -1,0 +1,11 @@
+.hint__view {
+    opacity: 0;
+}
+
+.launch__bar:hover > .hint__view {
+    opacity: 1;
+}
+
+.launch__bar:hover {
+    background-color: rgba(0, 171, 255, .25);
+}
