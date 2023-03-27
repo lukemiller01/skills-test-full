@@ -1,91 +1,43 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+// Chrome stops autoplay of all video that don't have the muted property.
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import world from "../../public/world.png";
 
-export default function Home() {
+const Alerts = () => (
+  <>
+    <table className=" mx-4">
+      <tbody>
+        <tr>
+          <td className="font-semibold">Daily health check completed</td>
+          <td className=" text-gray-400">3/26/23 daily health check completed with 0 errors, 1 warning, and 40 logs.</td>
+        </tr>
+        <tr>
+          <td className="font-semibold">Ran diagnostics on SH-A2.</td>
+          <td className=" text-gray-400">ERRNO5: Consider re-running SH-A2 test compiler.</td>
+        </tr>
+        <tr>
+          <td className="font-semibold">Uptime Report 2/2023</td>
+          <td className=" text-gray-400">Summary</td>
+        </tr>
+      </tbody>
+    </table>
+  </>
+);
+
+// TODO: componentize this (pattern of divs inside parent wrapper).
+export default function Page() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="mt-14 ml-48 w-auto p-4 pb-12 m-4 bg-gray-800 rounded-xl flex flex-col gap-4">
+      <div className="flex flex-col mb-4 gap-4">
+        <h1>Orbit View</h1>
+        <div className="flex justify-center">
+          <Image src={world} alt="world map" priority></Image>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
+      <div className="flex flex-col mb-4 gap-4">
+        <h1>System Events</h1>
+        <Alerts />
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
