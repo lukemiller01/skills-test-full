@@ -2,11 +2,6 @@ import { launchesQuery } from "../../../graphql/queries";
 import { print } from "graphql/language/printer";
 import LaunchesMonth from "@/components/LaunchesMonth";
 
-interface Launch {
-  id: string;
-  launchDate: string;
-}
-
 async function getLaunches(year: number) {
   try {
     const res = await fetch(
@@ -58,7 +53,7 @@ export default async function Page({ params }: any) {
 
   // const keys = Object.keys(data); // Years
   const values = Object.values(data); // Launches
-  const max = Math.max(...values); // Maximum value for launches s
+  const max = Math.max(...values); // Maximum number of launches to calculate percentage within component
 
   return (
     <>
